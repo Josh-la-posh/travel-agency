@@ -1,36 +1,18 @@
 // import React, { Component } from 'react';
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { Navbar, Nav, NavbarBrand, NavbarToggler, Collapse, NavItem, Tooltip, Button } from 'reactstrap';
+// import { Modal } from 'react-modal';
+import { Navbar, Nav, NavbarBrand, NavbarToggler, Collapse, NavItem, Label, Card, CardTitle, CardBody, CardText, Button, Form, Input } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import ReactTooltip from 'react-tooltip';
-import OverlayTrigger from 'react-overlay-trigger';
+// import ReactTooltip from 'react-tooltip';
+// import OverlayTrigger from 'react-overlay-trigger';
 import './HeaderComponent.css';
 import { Popover } from 'bootstrap';
-
-// class Header extends Component {
-//     constructor(props) {
-//         super(props);
-
-//         this.state = {
-//             isNavToggled : false,
-//             isOpenNav : false
-//         }
-//         this.toggleNav = this.toggleNav.bind(this);
-//     }
-
-//     toggleNav() {
-//         this.setState.isNavToggled({
-//             isNavToggled : !this.state.isNavToggled
-//         })
-//     }
-    
-//     render() {
+import Popup from 'reactjs-popup';
 
 function Header () {
 
     const [isNavToggled, setIsNavToggled] = useState(false);
-    // const [isHover, setIsHover] = useState(false);
     
         return (
             <React.Fragment>
@@ -80,8 +62,38 @@ function Header () {
                             </Nav>
                         </Collapse>
 
-                        
-                        <Button id='btn' data-aos="zoom-in-left" data-aos-delay="1300" href="#book-form">book now</Button> {' '}
+                        <div id='logo-btn' data-aos="zoom-in-left" data-aos-delay="1300">
+                            <Popup
+                                trigger={
+                                    <button type='button' id='logo-btn'>
+                                        EN | NGN <FontAwesomeIcon icon="angle-down" className='icon-right'/>
+                                    </button>
+                                }
+                                position={['bottom right']}
+                                on={['hover', 'focus']}
+                            >
+                                <Card>
+                                    <CardTitle>Change Language</CardTitle>
+                                    <CardBody>
+                                        <CardText>English</CardText>
+                                    </CardBody>
+                                </Card>
+                            </Popup>
+                            <Popup
+                                trigger={
+                                    <button type='button' id='logo-btn'>
+                                        My Account <FontAwesomeIcon icon="angle-down" className='icon-right'/>
+                                    </button>
+                                }
+                                position="bottom right"
+                                on={['hover', 'focus']}
+                            >
+                                <div className="logo-btn__btn">
+                                    <Button>Login</Button>
+                                    <Button>Sign Up</Button>{''}
+                                </div>
+                            </Popup>
+                        </div>
                         
                     </div>
                 </Navbar>

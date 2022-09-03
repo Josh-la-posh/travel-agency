@@ -19,7 +19,7 @@
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1000;
+  z-index: 5;
   background: #222;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -68,6 +68,79 @@
   color: #29d9d5;
 }
 
+#logo-btn {
+  font-size: 13px;
+  color: #aaa;
+  font-weight: 500;
+  background: transparent;
+  display: flex;
+  align-items: center;
+}
+
+#logo-btn #logo-btn:not(:last-child) {
+  margin-right: 1rem;
+}
+
+#logo-btn #logo-btn {
+  position: relative;
+}
+
+#popup-root form {
+  /* z-index: 500000; */
+  background: #fff;
+  width: 18rem;
+  height: 20rem;
+
+}
+
+#popup-root .popup-arrow {
+  color: #111;
+  width: 4rem;
+}
+
+#popup-root .logo-btn__btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1rem 0;
+  width: 18rem;
+  height: 15rem;
+  background-color: #222;
+  box-shadow: ;
+}
+
+#popup-root .logo-btn__btn button {
+  background-color: #29d9d5;
+  color: #fff;
+  width: 70%;
+  padding: 1rem;
+  /* height: 5rem; */
+  font-size: 1.4rem;
+  /* font-weight: bolder; */
+  border: 1px solid #29d9d5;
+}
+
+#popup-root .logo-btn__btn button:last-child {
+  background-color: transparent;
+  color: #29d9d5;
+}
+
+#logo-btn:hover {
+  color: #29d9d5;
+}
+
+#logo-btn .icon-left {
+  padding: 0 .5rem;
+  font-size: 1.7rem;
+  font-weight: unset;
+}
+
+#logo-btn .icon-right {
+  padding: 0 .5rem;
+  font-weight: unset;
+}
+
 #btn {
   margin-top: 1rem;
   display: inline-block;
@@ -83,10 +156,6 @@
 #btn:hover {
   background: #29d9d5;
   color: #111;
-}
-
-#header-nav #btn {
-  margin-top: 0;
 }
 
 #menu-btn {

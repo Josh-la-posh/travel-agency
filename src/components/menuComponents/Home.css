@@ -58,7 +58,7 @@ section {
     border-radius: 1rem;
     -webkit-box-shadow: 0 0.5rem 1rem rgba(17, 17, 17, 0.3);
             box-shadow: 0 0.5rem 1rem rgba(17, 17, 17, 0.3);
-    padding: 3rem 4rem;
+    padding: 3rem 12rem;
     overflow: hidden;
   }
 
@@ -66,7 +66,7 @@ section {
     color: #fff;
     text-align: center;
     height: 45px;
-    margin: -3rem -4rem 0;
+    margin: -3rem -12rem 4rem;
     background: #29d9d5;
     text-decoration: none;
     border-top-right-radius: .8rem;
@@ -138,66 +138,82 @@ section {
     height: 100%;
   }
 
-  /* #tab-list li:after {
-    content: '';
-    width: 100%;
-
-  } */
-
-  /* #tab-list li:hover {
-    color: #222;
-    transform: scale(1.1);
-  } */
-
-  /* #tab-list li:active {
-    outline: none;
-    height: 40%;
-  }
-   */
-  /* .book-form form {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: end;
-        -ms-flex-align: end;
-            align-items: flex-end;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    gap: 1.5rem;
+  form .row {
+    margin-bottom: 2rem;
   }
   
-  .book-form ul {
-    font-size: 20px;
-  }
-  
-  .book-form ul li a {
-    color: white;
-  }
-  
-  .book-form form .inputBox {
-    -webkit-box-flex: 1;
-        -ms-flex: 1 1 25rem;
-            flex: 1 1 25rem;
+  .book-form form .inputBox label {
+    font-size: 1.6rem;
+    font-weight: 500;
   }
   
   .book-form form .inputBox span {
     font-size: 1.4rem;
-    color: #aaa;
+    font-weight: 500;
+  }
+
+  .book-form form #option-select {
+    margin-top: -.8rem;
+  }
+
+  .book-form form .row #option-input,
+  #select-secondary,
+  .book-form form #select-primary .css-1s2u09g-control {
+    font-size: 1.4rem;
+    height: 4rem;
+    overflow: hidden;
+  }
+
+  .book-form form .row #option-input:hover,
+  #select-secondary:hover,
+  .book-form form #select-primary .css-1s2u09g-control:hover {
+    border: 0.1rem solid #29d9d5;
+  }
+
+  .book-form form .row #option-input:active,
+  #select-secondary:active,
+  .book-form form #select-primary .css-1s2u09g-control:active {
+    outline: .1rem solid #29d9d5;
+  }
+
+  .css-tj5bde-Svg {
+    color: #eee;
+  }
+
+  #select-primary .css-1hb7zxy-IndicatorsContainer {
+    background-color: #29d9d5;
   }
   
-  .book-form form .inputBox input {
-    width: 100%;
-    padding: 1.2rem 1.4rem;
+  #select-secondary {
+    margin-top: .8rem;
+  }
+
+  .row .form-label {
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+
+  .row .form-check-input {
+    margin-right: .3rem;
+  }
+
+  #btn-submit {
+    width: 20rem;
+    display: block;
+    font-size: 1.4rem;
+    margin: 3rem auto 0;
+    padding: 1.5rem 5rem;
     border-radius: 5rem;
-    border: 0.2rem solid #29d9d5;
-    font-size: 1.6rem;
-    color: #aaa;
-    text-transform: none;
-    background: none;
-    margin-top: 1rem;
+    border: .2rem solid #29d9d5;
+    color: #29d9d5;    
+  }
+
+  #btn-submit:hover {
+    color: #222;
+    background-color: #29d9d5;
   }
   
-  .book-form form .btn {
+  /* .book-form form .btn {
     -webkit-box-flex: 1;
         -ms-flex: 1 1 15rem;
             flex: 1 1 15rem;
@@ -878,10 +894,6 @@ section {
       max-width: 60rem;
       font-size: 1.2rem;
       line-height: 1.7;
-    }
-
-    .video-container {
-      /* margin-bottom: 0; */
     }
     
     .about .content {
