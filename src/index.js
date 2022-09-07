@@ -11,10 +11,10 @@ import 'font-awesome/css/font-awesome.min.css';
 import 'bootstrap-social/bootstrap-social.css';
 import { library } from '@fortawesome/fontawesome-svg-core'
 // import { fab } from '@fortawesome/free-brands-svg-icons'
-import { faCheckSquare, faCoffee, faPaperPlane, faChevronRight, faPersonHiking, faGlobe, faUtensils, faHotel, faWallet, faHeadset, faClock, faUser, faArrowRight, faMap, faEnvelope, faPhone, faAngleDown, faCircleUser} from '@fortawesome/free-solid-svg-icons';
+import { faCheckSquare, faCoffee, faPaperPlane, faChevronRight, faPersonHiking, faGlobe, faUtensils, faHotel, faWallet, faHeadset, faClock, faUser, faArrowRight, faMap, faEnvelope, faPhone, faAngleDown, faCircleUser, faCalendarDays} from '@fortawesome/free-solid-svg-icons';
 
 
-library.add(faCheckSquare, faCoffee, faPaperPlane, faChevronRight, faPersonHiking, faGlobe, faUtensils, faHotel, faWallet, faHeadset, faClock, faUser, faArrowRight, faMap, faEnvelope, faPhone, faAngleDown, faCircleUser)
+library.add(faCheckSquare, faCoffee, faPaperPlane, faChevronRight, faPersonHiking, faGlobe, faUtensils, faHotel, faWallet, faHeadset, faClock, faUser, faArrowRight, faMap, faEnvelope, faPhone, faAngleDown, faCircleUser, faCalendarDays)
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

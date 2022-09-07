@@ -7,33 +7,16 @@ import './FooterComponent.css';
 class Footer extends Component {
     constructor(props) {
         super(props);
-
+        this.state = {
+            email : ''
+        }
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleSubmit(e) {
         e.preventDefault();
         alert('Email: ' + this.email.value);
-        console.log(this.email.value);
     }
-
-    renderForm() {
-        if (this.email.value) {
-            return (
-                <Form onSubmit={this.handleSubmit}>
-                    <Input type="email" id='email' name='email' placeholder="enter your email" className="email"
-                            innerRef={input => this.email = input}/>
-                    <Button type='submit' value='submit' id='btn' data-aos="zoom-in-left" data-aos-delay="1300">book now</Button> {' '}
-            
-                </Form>
-            )
-        } else {
-            return (
-                <p>Thanks for subscribing</p>
-            )
-        }
-    }
-
     render() { 
         return (
             <div>
@@ -75,7 +58,13 @@ class Footer extends Component {
                         <div className="box" data-aos="fade-up" data-aos-delay="600">
                             <h3>newsletter</h3>
                             <p>subscribe for latest updates</p>
-                            {this.renderForm}
+                            <Form onSubmit={this.handleSubmit}>
+                                <Input type="email" id='email' name='email' placeholder="enter your email" className="email"
+                                        value={this.email} onChange={(e) => this.setEmail(e.target.value)}
+                                        innerRef={input => this.email = input}/>
+                                <Button type='submit' value='submit' id='btn' data-aos="zoom-in-left" data-aos-delay="1300">book now</Button> {' '}
+                                
+                            </Form>
                         </div>
 
                     </div>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Outlet } from 'react-router-dom';
 import { Navbar, Nav, NavbarBrand, NavbarToggler, Collapse, NavItem, Label, Button, Form, Input,Modal, ModalHeader, ModalBody, FormGroup } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import ReactTooltip from 'react-tooltip';
@@ -14,10 +14,23 @@ class Header extends Component {
 
         this.state = {
             isNavToggled : false,
-            isModalOpen : false
+            isModalOpen : false,
+            username : '',
+            password : '',
+            agree : false
         }
         this.toggleNav = this.toggleNav.bind(this);
         this.toggleModal = this.toggleModal.bind(this);
+        this.handleChange = this.handleChange.bind(this);
+    }
+
+    handleChange = (e) => {
+        const target = e.target;
+        const name = target.name;
+        const value = target.type === "checkbox" ? target.checked : target.value;
+        this.setState({
+            [name]:value
+        })
     }
 
     toggleNav () {
@@ -86,7 +99,9 @@ class Header extends Component {
                                 >
                                     <Form>
                                         <Label>Change Language</Label>                                
-                                        <Input value='English' />
+                                        <Input
+                                            value='English'
+                                             />
                                         <hr />
                                         <Label>Change Country</Label>
                                         <Input type='select'>
@@ -126,17 +141,24 @@ class Header extends Component {
                                 <FormGroup>
                                     <Label>Username</Label>
                                     <Input type='text' id='username' name='username'
-                                            innerRef={(input) => this.username = input} />
+                                            value={this.state.username}
+                                            onChange={this.handleChange}
+                                            innerRef={(input) => this.username = input} 
+                                            />
                                 </FormGroup>
                                 <FormGroup>
                                     <Label htmlFor='password'>Password</Label>
                                     <Input type='password' id='password' name='password'
+                                            value={this.state.password}
+                                            onChange={this.handleChange}
                                             innerRef={(input) => this.password = input} 
                                             />
                                 </FormGroup>
                                 <FormGroup check>
                                     <Label check md={9}>
-                                        <Input type='checkbox' name='remember' 
+                                        <Input type='checkbox' name='agre'
+                                                value={this.state.agree}
+                                                onChange={this.handleChange}
                                                 innerRef={(input) => this.remember = input}
                                                 />
                                         Remember me
@@ -148,6 +170,12 @@ class Header extends Component {
                             </Form>
                         </ModalBody>
                     </Modal>
+
+                    <Modal>
+                        
+                    </Modal>
+
+                    <Outlet />
                 </React.Fragment>
             );
     }
