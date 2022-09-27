@@ -13,15 +13,6 @@ class Header extends Component {
         super(props);
 
         this.state = {
-            isNavToggled : false,
-            isLoginOpen : false,
-            isModalOpen : false,
-            username : '',
-            firstname : '',
-            surname : '',
-            email : '',
-            password : '',
-            agree : false,
             touched : {
                 firstname : false,
                 surname : false,
@@ -29,43 +20,26 @@ class Header extends Component {
                 password : false
             }
         }
-        this.toggleNav = this.toggleNav.bind(this);
-        this.toggleLogin = this.toggleLogin.bind(this);
-        this.toggleModal = this.toggleModal.bind(this);
         this.handleChange = this.handleChange.bind(this);
         this.handleBlur = this.handleBlur.bind(this);
     }
 
+
     handleChange = (e) => {
-        const target = e.target;
-        const value = target.type === "checkbox" ? target.checked : target.value;
-        const name = target.name;
-        this.setState({
-            [name]:value
-        })
-    }
+        // const target = e.target;
+        // const value = target.type === "checkbox" ? target.checked : target.value;
+        // const name = target.name;
+        // this.setState({
+        //     [name]:value
+        // })
+        // // [name]= value
+        // console.log(value)
 
-    toggleNav () {
-        this.setState({
-            isNavToggled: !this.state.isNavToggled
-        })
-    }
-
-    toggleLogin () {
-        this.setState({
-            isLoginOpen : !this.state.isLoginOpen
-        })
-    }
-
-    toggleModal () {
-        this.setState({
-            isModalOpen : !this.state.isModalOpen
-        })
     }
 
     handleLogin = (e) => {
         e.preventDefault();
-        this.toggleLogin();
+        this.props.toggleLogin();
         alert('Username: ' + this.username.value + ' Password:  ' + this.password.value + " Remember " + this.agree.checked);
     }
 
@@ -111,14 +85,16 @@ class Header extends Component {
     }
 
     render() {
-        const errors = this.validate(this.state.firstname, this.state.surname, this.state.password, this.state.email);
+        const {isNavToggled, isLoginOpen, isModalOpen, username, firstname, surname, email, agree, password, toggleNav, toggleLogin, toggleModal, touchedFirstname, touchedSurname, touchedEmail, touchedPassword } = this.props
+
+        const errors = this.validate(firstname, surname, password, email);
     
             return (
                 <React.Fragment>
                     <Navbar expand='md' dark>
                         <div id='header-nav'>
 
-                            <NavbarToggler onClick={()=>this.state.isNavToggled} />
+                            <NavbarToggler data-bs-toggle='collapse' data-bs-target='#navToggler' />
 
                             {/* <div id="menu-btn" className="fas fa-bars"></div> */}
 
@@ -126,7 +102,7 @@ class Header extends Component {
                                 <FontAwesomeIcon icon="paper-plane" className='header-logo' /> travel
                             </NavbarBrand>
 
-                            <Collapse navbar isNavToggled={this.toggleNav} className='nav-col'>
+                            <Collapse navbar id='navToggler'>
                                 <Nav navbar>
                                     <NavItem>
                                         <NavLink data-aos="zoom-in-left" data-aos-delay="300" className='nav-link' id='nav-link-item' to="/">home</NavLink>
@@ -147,55 +123,59 @@ class Header extends Component {
                                 </Nav>
                             </Collapse>
 
-                            <div id='logo-btn' data-aos="zoom-in-left" data-aos-delay="1300">
-                                <Popup
-                                    trigger={
-                                        <button type='button' id='logo-btn'>
-                                            EN | NGN <FontAwesomeIcon icon="angle-down" className='icon-right'/>
-                                        </button>
-                                    }
-                                    position={['bottom right']}
-                                    on={['hover', 'focus']}
-                                >
-                                    <Form>
-                                        <Label>Change Language</Label>                                
-                                        <Input
-                                            value='English'
-                                             />
-                                        <hr />
-                                        <Label>Change Country</Label>
-                                        <Input type='select'>
-                                            <option value="">Nigeria</option>
-                                        </Input>
-                                        <hr />
-                                        <Label>Change Currency</Label>
-                                        <Input type='select'>
-                                            <option value="">NGN</option>
-                                        </Input>
-                                        <hr />
-                                    </Form>
-                                </Popup>
-                                <Popup
-                                    trigger={
-                                        <button type='button' id='logo-btn'>
-                                            My Account <FontAwesomeIcon icon="angle-down" className='icon-right'/>
-                                        </button>
-                                    }
-                                    position="bottom right"
-                                    on={['hover', 'focus']}
-                                >
-                                    <div className="logo-btn__btn">
-                                        <Button onClick={this.toggleLogin}>Login</Button>
-                                        <Button onClick={this.toggleModal}>Sign Up</Button>
+                            <Collapse navbar id='navToggler'>
+                                <Nav navbar>
+                                    <div id='logo-btn' data-aos="zoom-in-left" data-aos-delay="1300">
+                                        <Popup
+                                            trigger={
+                                                <button type='button' id='logo-btn'>
+                                                    EN | NGN <FontAwesomeIcon icon="angle-down" className='icon-right'/>
+                                                </button>
+                                            }
+                                            position={['bottom right']}
+                                            on={['hover', 'focus']}
+                                        >
+                                            <Form>
+                                                <Label>Change Language</Label>                                
+                                                <Input
+                                                    value='English'
+                                                    />
+                                                <hr />
+                                                <Label>Change Country</Label>
+                                                <Input type='select'>
+                                                    <option value="">Nigeria</option>
+                                                </Input>
+                                                <hr />
+                                                <Label>Change Currency</Label>
+                                                <Input type='select'>
+                                                    <option value="">NGN</option>
+                                                </Input>
+                                                <hr />
+                                            </Form>
+                                        </Popup>
+                                        <Popup
+                                            trigger={
+                                                <button type='button' id='logo-btn'>
+                                                    My Account <FontAwesomeIcon icon="angle-down" className='icon-right'/>
+                                                </button>
+                                            }
+                                            position="bottom right"
+                                            on={['hover', 'focus']}
+                                        >
+                                            <div className="logo-btn__btn">
+                                                <Button onClick={toggleLogin}>Login</Button>
+                                                <Button onClick={toggleModal}>Sign Up</Button>
+                                            </div>
+                                        </Popup>
                                     </div>
-                                </Popup>
-                            </div>
+                                </Nav>
+                            </Collapse>
                             
                         </div>
                     </Navbar>
 
-                    <Modal id='modal-login' isOpen={this.state.isLoginOpen} toggle={this.toggleLogin}>
-                        <ModalHeader toggle={this.toggleLogin}>Login</ModalHeader>
+                    <Modal id='modal-login' isOpen={isLoginOpen} toggle={toggleLogin}>
+                        <ModalHeader toggle={toggleLogin}>Login</ModalHeader>
                         <ModalBody>
                             <Form onSubmit={this.handleLogin}>
                                 <FormGroup>
@@ -203,13 +183,13 @@ class Header extends Component {
                                     <Input type='text'
                                             id='username'
                                             name='username'
-                                            value={this.state.username}
+                                            value={username}
                                             onChange={this.handleChange}
                                             innerRef={(input) => this.username = input} 
                                             />
                                     <Label htmlFor='password'>Password</Label>
                                     <Input type='password' id='password' name='password'
-                                            value={this.state.password}
+                                            value={password}
                                             onChange={this.handleChange}
                                             innerRef={(input) => this.password = input} 
                                             />
@@ -218,7 +198,7 @@ class Header extends Component {
                                     <Label check md={9}>
                                         <Input type='checkbox'
                                                 name='agre'
-                                                value={this.state.agree}
+                                                value={agree}
                                                 onChange={this.handleChange}
                                                 innerRef={(input) => this.agree = input}
                                                 />
@@ -232,8 +212,8 @@ class Header extends Component {
                         </ModalBody>
                     </Modal>
 
-                    <Modal id='modal-signup' isOpen={this.state.isModalOpen}>
-                        <ModalHeader toggle={this.toggleModal}>
+                    <Modal id='modal-signup' isOpen={isModalOpen}>
+                        <ModalHeader toggle={toggleModal}>
                             <h1>Sign Up</h1>
                             <p>It's quick and easy.</p>
                         </ModalHeader>
@@ -244,7 +224,7 @@ class Header extends Component {
                                         <Input type='text'
                                                 placeholder='First Name'
                                                 name='firstname'
-                                                value={this.state.firstname}
+                                                value={firstname}
                                                 valid={errors.firstname === ''}
                                                 invalid={errors.firstname !== ''}
                                                 onBlur={this.handleBlur('firstname')}
@@ -256,7 +236,7 @@ class Header extends Component {
                                         <Input type='text'
                                                 placeholder='Surname'
                                                 name='surname'
-                                                value={this.state.surname}
+                                                value={surname}
                                                 onChange={this.handleChange}
                                                 valid={errors.surname === ''}
                                                 invalid={errors.surname !== ''}
@@ -269,7 +249,7 @@ class Header extends Component {
                                     <Input type='text'
                                             placeholder='Mobile number or email address'
                                             name='email'
-                                            value={this.state.email}
+                                            value={email}
                                             valid={errors.email === ''}
                                             invalid={errors.email !== ''}
                                             onBlur={this.handleBlur('email')}

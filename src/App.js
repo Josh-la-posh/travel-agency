@@ -1,4 +1,6 @@
-import { ReactDOM } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import { reducer } from './reducer';
 import { BrowserRouter } from 'react-router-dom';
 import './App.css';
 import Main from './components/MainComponent';
@@ -14,12 +16,17 @@ class App extends Component {
   }
   
   render () {
+
+    const store = createStore(reducer);
+
     return (
-      <BrowserRouter>
-        <div className='App'>
-          <Main />
-        </div>
-      </BrowserRouter>
+      <Provider store={store}>
+        <BrowserRouter>
+          <div className='App'>
+            <Main />
+          </div>
+        </BrowserRouter>
+      </Provider>
     );
   }
 }

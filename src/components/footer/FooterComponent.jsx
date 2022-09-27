@@ -71,7 +71,7 @@ class Footer extends Component {
 
                 </section>
 
-                <div className="credit">created by <span>Daddydof</span> | all rights reserved!</div>
+                <div className="credit">created by <span>La_Posh</span> | all rights reserved!</div>
 
                 {/* <!-- footer section ends --> */}
             </div>
