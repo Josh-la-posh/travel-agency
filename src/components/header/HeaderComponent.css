@@ -39,6 +39,10 @@
   font-weight: bolder;
 }
 
+a {
+  text-decoration: none;
+}
+
 .header-logo {
   color: #29d9d5;
   padding-right: .5rem;

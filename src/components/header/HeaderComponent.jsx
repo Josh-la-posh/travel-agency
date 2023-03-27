@@ -99,9 +99,9 @@ class Header extends Component {
 
                             {/* <div id="menu-btn" className="fas fa-bars"></div> */}
 
-                            <NavbarBrand data-aos="zoom-in-left" data-aos-delay="150" href="#" id="logo">
+                            <NavLink to='#/'><NavbarBrand data-aos="zoom-in-left" data-aos-delay="150" id="logo">
                                 <FontAwesomeIcon icon="paper-plane" className='header-logo' /> travel
-                            </NavbarBrand>
+                            </NavbarBrand></NavLink>
 
                             <Collapse navbar id='navToggler'>
                                 <Nav navbar>
