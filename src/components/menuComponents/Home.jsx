@@ -50,7 +50,6 @@ function Home() {
                         <Form show>
                             
                             <Row>
-
                                 <Col data-aos="zoom-in" className='inputBox' data-aos-delay="150">
                                     <FormGroup>
                                         <Label>Leaving from</Label>
@@ -71,11 +70,9 @@ function Home() {
                                         <Input id='option-input' type="date" value=""/>
                                     </FormGroup>
                                 </Col>
-
                             </Row>
                             
                             <Row>
-
                                 <Col md={2} data-aos="zoom-in" data-aos-delay="300" className="inputBox">
                                     <span>Duration</span>
                                     <Input id='select-secondary' type='select' value="">
@@ -114,8 +111,7 @@ function Home() {
                                         <option>4</option>
                                         <option>5</option>
                                     </Input>
-                                </Col>
-                            
+                                </Col>                            
                             </Row>
 
                             <Row className=''>
