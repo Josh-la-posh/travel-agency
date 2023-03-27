@@ -60,7 +60,7 @@ export default function TabForm() {
               </Col>
             </Row>
 
-            <Row>
+            <Row id="row">
               <Col
                 md={2}
                 data-aos="zoom-in"
@@ -141,7 +141,7 @@ export default function TabForm() {
               </Col>
             </Row>
 
-            <Row className="">
+            <Row id="row">
               <Col md={2}>
                 <FormGroup data-aos="zoom-in" data-aos-delay="450">
                   <Label>
@@ -387,7 +387,7 @@ export default function TabForm() {
                     </TabPanel> */}
         <TabPanel>
           <Form show>
-            <Row>
+            <Row id="row2">
               <Col
                 md={3}
                 data-aos="zoom-in"

@@ -70,6 +70,25 @@ section {
   overflow: hidden;
 }
 
+@media screen and (max-width: 576px) {
+  .book-form {
+    padding: 3rem;
+  }
+  #row {
+    display: flex !important;
+    width: 100% !important;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  #row .inputBox {
+    width: calc(100%/5);
+  }
+  #row .col-md-2 {
+    width: calc(100%/5);
+  }
+
+}
+
 @media screen and (max-width: 480px) {
   .book-form {
     width: 90%;
@@ -194,7 +213,52 @@ form .row {
   font-weight: 500;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 1200px) {
+  .book-form form .inputBox label,.book-form form .inputBox span {
+    font-size: 1.1rem !important;
+  }
+  .css-14el2xx-placeholder {
+    font-size: 10px;
+  }
+  .book-form form .row #option-input, #select-secondary, .book-form form #select-primary .css-1s2u09g-control {
+    font-size: 1.2rem !important;
+  }
+  .row .form-label {
+    font-size: 1rem !important;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .book-form form .inputBox label,.book-form form .inputBox span {
+    font-size: .9rem !important;
+  }
+  .css-14el2xx-placeholder {
+    font-size: 7px;
+  }
+  .book-form form .row #option-input, #select-secondary, .book-form form #select-primary .css-1s2u09g-control {
+    font-size: .7rem !important;
+  }
+  .row .form-label {
+    font-size: .6rem !important;
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .book-form form .inputBox label,.book-form form .inputBox span {
+    font-size: .6rem !important;
+  }
+  .css-14el2xx-placeholder {
+    font-size: 4px;
+  }
+  .book-form form .row #option-input, #select-secondary, .book-form form #select-primary .css-1s2u09g-control {
+    /* font-size: 1.2rem !important; */
+  }
+  .row .form-label {
+    font-size: .4rem !important;
+  }
+}
+
+@media screen and (max-width: 576px) {
   .book-form form .inputBox label {
     font-size: 1rem;
     padding: 0;
@@ -204,12 +268,6 @@ form .row {
 .book-form form .inputBox span {
   font-size: 1.4rem;
   font-weight: 500;
-}
-
-@media screen and (max-width: 480px) {
-  .book-form form .inputBox span {
-    font-size: 0.8rem;
-  }
 }
 
 .book-form form #option-select {
@@ -258,11 +316,12 @@ form .row {
 }
 
 #btn-submit {
-  width: 20rem;
+  width: 40%;
   display: block;
+  text-align: center;
   font-size: 1.4rem;
   margin: 3rem auto 0;
-  padding: 1.5rem 5rem;
+  padding: 1rem 0;
   border-radius: 5rem;
   border: 0.2rem solid #29d9d5;
   color: #29d9d5;
