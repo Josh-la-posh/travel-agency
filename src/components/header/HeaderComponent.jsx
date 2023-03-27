@@ -108,16 +108,16 @@ class Header extends Component {
                                         <NavLink data-aos="zoom-in-left" data-aos-delay="300" className='nav-link' id='nav-link-item' to="/">home</NavLink>
                                     </NavItem>
                                     <NavItem>                                        
-                                        <NavLink data-aos="zoom-in-left" data-aos-delay="450" className='nav-link' id='nav-link-item' to="/about">about</NavLink>
+                                        <NavLink data-aos="zoom-in-left" data-aos-delay="450" className='nav-link' id='nav-link-item' >about</NavLink>
                                     </NavItem>
                                     <NavItem>
-                                        <NavLink data-aos="zoom-in-left" data-aos-delay="750" className='nav-link' id='nav-link-item' to="/services">services</NavLink>
+                                        <NavLink data-aos="zoom-in-left" data-aos-delay="750" className='nav-link' id='nav-link-item' >services</NavLink>
                                     </NavItem>
                                     <NavItem>
-                                        <NavLink data-aos="zoom-in-left" data-aos-delay="900" className='nav-link' id='nav-link-item' to="/gallery">gallery</NavLink>
+                                        <NavLink data-aos="zoom-in-left" data-aos-delay="900" className='nav-link' id='nav-link-item' >gallery</NavLink>
                                     </NavItem>
                                     <NavItem>
-                                        <NavLink data-aos="zoom-in-left" data-aos-delay="1150" className='nav-link' id='nav-link-item' to="/blogs">blogs</NavLink>
+                                        <NavLink data-aos="zoom-in-left" data-aos-delay="1150" className='nav-link' id='nav-link-item' >blogs</NavLink>
                                     </NavItem>
                                     
                                 </Nav>

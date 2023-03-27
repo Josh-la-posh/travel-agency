@@ -10,6 +10,7 @@ import { setToggleNav, setOpenLoginModal, setOpenModal,
          setUsername, setFirstname, setSurname,
          setEmail, setPassword, setAgree, setTouchedFirstname,
          setTouchedSurname, setTouchedEmail, setTouchedPassword } from '../action';
+import TabForm from './TabForm';
 
 const mapStateToProps = (state) => {
     return {
@@ -87,6 +88,7 @@ const mapDispatchToProps = (dispatch) => {
                             />}>
 
                         <Route index element={<Home />} />
+                        <Route path='home' element={<Home />} />
 
 
 
