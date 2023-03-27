@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { NavLink, Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 import { Navbar, Nav, NavbarBrand, NavbarToggler, Collapse, NavItem, Label, Button, Form, Input,Modal, ModalHeader, ModalBody, FormGroup, Col, Row, FormFeedback } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { HashLink as NavLink } from 'react-router-hash-link';
 // import ReactTooltip from 'react-tooltip';
 // import OverlayTrigger from 'react-overlay-trigger';
 import './HeaderComponent.css';
@@ -105,19 +106,19 @@ class Header extends Component {
                             <Collapse navbar id='navToggler'>
                                 <Nav navbar>
                                     <NavItem>
-                                        <NavLink data-aos="zoom-in-left" data-aos-delay="300" className='nav-link' id='nav-link-item' to="/">home</NavLink>
+                                        <NavLink data-aos="zoom-in-left" data-aos-delay="300" className='nav-link' id='nav-link-item' to="#/">home</NavLink>
                                     </NavItem>
                                     <NavItem>                                        
-                                        <NavLink data-aos="zoom-in-left" data-aos-delay="450" className='nav-link' id='nav-link-item' >about</NavLink>
+                                        <NavLink data-aos="zoom-in-left" data-aos-delay="450" className='nav-link' id='nav-link-item' to="#about">about</NavLink>
                                     </NavItem>
                                     <NavItem>
-                                        <NavLink data-aos="zoom-in-left" data-aos-delay="750" className='nav-link' id='nav-link-item' >services</NavLink>
+                                        <NavLink data-aos="zoom-in-left" data-aos-delay="750" className='nav-link' id='nav-link-item' to="#service">services</NavLink>
                                     </NavItem>
                                     <NavItem>
-                                        <NavLink data-aos="zoom-in-left" data-aos-delay="900" className='nav-link' id='nav-link-item' >gallery</NavLink>
+                                        <NavLink data-aos="zoom-in-left" data-aos-delay="900" className='nav-link' id='nav-link-item' to="#gallery">gallery</NavLink>
                                     </NavItem>
                                     <NavItem>
-                                        <NavLink data-aos="zoom-in-left" data-aos-delay="1150" className='nav-link' id='nav-link-item' >blogs</NavLink>
+                                        <NavLink data-aos="zoom-in-left" data-aos-delay="1150" className='nav-link' id='nav-link-item' to="#blog">blogs</NavLink>
                                     </NavItem>
                                     
                                 </Nav>
